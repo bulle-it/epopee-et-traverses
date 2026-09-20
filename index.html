@@ -1,0 +1,1020 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>L'Épopée et ses traverses</title>
+<meta name="description" content="Algérie → France : trois voies tentées pour se retrouver, les règles officielles qui les barrent, et le chemin parcouru depuis janvier 2026.">
+<style>
+:root{
+  --bleu:#000091; --bleu-clair:#1212ff; --encre:#161616; --gris:#666; --gris-pale:#e5e5e5;
+  --fond:#ffffff; --fond-2:#f6f6f9; --carte:#ffffff; --bord:#dcdcE8;
+  --rouge:#c9191e; --rouge-pale:#fdeeee; --vert:#18753c; --vert-pale:#eefaf1;
+  --ambre:#b34000; --ambre-pale:#fff4ed;
+  --ombre:0 1px 2px rgba(0,0,40,.06), 0 8px 24px rgba(0,0,40,.06);
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){
+    --bleu:#8c8cff; --bleu-clair:#a5a5ff; --encre:#ececf2; --gris:#a0a0ae; --gris-pale:#2c2c36;
+    --fond:#101016; --fond-2:#16161d; --carte:#1a1a22; --bord:#2e2e3a;
+    --rouge:#ff8a8d; --rouge-pale:#2a1618; --vert:#6fd598; --vert-pale:#132419;
+    --ambre:#ffab70; --ambre-pale:#2a1c12;
+    --ombre:0 1px 2px rgba(0,0,0,.4), 0 8px 24px rgba(0,0,0,.35);
+  }
+}
+:root[data-theme="dark"]{
+  --bleu:#8c8cff; --bleu-clair:#a5a5ff; --encre:#ececf2; --gris:#a0a0ae; --gris-pale:#2c2c36;
+  --fond:#101016; --fond-2:#16161d; --carte:#1a1a22; --bord:#2e2e3a;
+  --rouge:#ff8a8d; --rouge-pale:#2a1618; --vert:#6fd598; --vert-pale:#132419;
+  --ambre:#ffab70; --ambre-pale:#2a1c12;
+  --ombre:0 1px 2px rgba(0,0,0,.4), 0 8px 24px rgba(0,0,0,.35);
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth; scroll-padding-top:70px}
+body{
+  margin:0; background:var(--fond); color:var(--encre);
+  font:400 17px/1.62 -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;
+  -webkit-font-smoothing:antialiased;
+}
+.wrap{max-width:860px; margin:0 auto; padding:0 16px}
+h1,h2,h3{line-height:1.2; letter-spacing:-.015em}
+h1{font-size:clamp(28px,5.2vw,46px); margin:0 0 14px; font-weight:800}
+h2{font-size:clamp(22px,3.6vw,31px); margin:0 0 6px; font-weight:750}
+h3{font-size:clamp(17px,2.4vw,20px); margin:26px 0 8px; font-weight:700}
+p{margin:0 0 14px}
+a{color:var(--bleu-clair)}
+.small{font-size:14px; color:var(--gris)}
+
+/* ---------- barre de navigation ---------- */
+nav{
+  position:sticky; top:0; z-index:50; background:color-mix(in srgb, var(--fond) 88%, transparent);
+  backdrop-filter:blur(10px); border-bottom:1px solid var(--bord);
+}
+nav .wrap{display:flex; gap:4px; overflow-x:auto; padding-top:9px; padding-bottom:9px; scrollbar-width:none}
+nav .wrap::-webkit-scrollbar{display:none}
+nav a{
+  flex:0 0 auto; text-decoration:none; color:var(--gris); font-size:13.5px; font-weight:600;
+  padding:6px 11px; border-radius:999px; white-space:nowrap;
+}
+nav a:hover{background:var(--fond-2); color:var(--encre)}
+nav a.on{background:var(--bleu); color:#fff}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]) nav a.on{color:#0d0d14}}
+:root[data-theme="dark"] nav a.on{color:#0d0d14}
+
+/* ---------- hero ---------- */
+header.hero{
+  background:linear-gradient(160deg, var(--bleu) 0%, #2b2bb8 58%, #4a1e7a 100%);
+  color:#fff; padding:56px 0 46px;
+}
+header.hero .kicker{
+  display:inline-block; font-size:12.5px; font-weight:700; letter-spacing:.09em; text-transform:uppercase;
+  background:rgba(255,255,255,.16); padding:5px 12px; border-radius:999px; margin-bottom:18px;
+}
+header.hero p.chapo{font-size:clamp(17px,2.5vw,20px); opacity:.94; margin:0 0 22px; max-width:660px}
+header.hero .meta{font-size:13.5px; opacity:.8}
+header.hero a{color:#fff}
+
+/* ---------- sections ---------- */
+section{padding:46px 0 10px; scroll-margin-top:66px}
+section:nth-of-type(even){background:var(--fond-2)}
+section > .wrap > .lead{color:var(--gris); font-size:16px; margin:0 0 26px}
+
+.carte{
+  background:var(--carte); border:1px solid var(--bord); border-radius:14px;
+  padding:20px 22px; box-shadow:var(--ombre); margin:0 0 18px;
+}
+.carte h3{margin-top:0}
+
+.encadre{border-left:4px solid var(--bleu); background:var(--carte); border-radius:0 12px 12px 0; padding:16px 20px; margin:0 0 18px}
+.encadre.rouge{border-left-color:var(--rouge); background:var(--rouge-pale)}
+.encadre.vert{border-left-color:var(--vert); background:var(--vert-pale)}
+.encadre.ambre{border-left-color:var(--ambre); background:var(--ambre-pale)}
+.encadre p:last-child{margin-bottom:0}
+
+blockquote{
+  margin:0 0 18px; padding:16px 20px; background:var(--carte);
+  border:1px solid var(--bord); border-left:4px solid var(--gris); border-radius:0 12px 12px 0;
+  font-style:italic;
+}
+blockquote p:last-child{margin-bottom:0}
+blockquote cite{display:block; font-style:normal; font-size:13.5px; color:var(--gris); margin-top:9px}
+
+/* ---------- fiche profil ---------- */
+.profil{display:grid; grid-template-columns:repeat(auto-fit,minmax(150px,1fr)); gap:1px; background:var(--bord); border:1px solid var(--bord); border-radius:14px; overflow:hidden; margin-bottom:18px}
+.profil div{background:var(--carte); padding:14px 16px}
+.profil dt{font-size:12px; text-transform:uppercase; letter-spacing:.06em; color:var(--gris); font-weight:700; margin-bottom:3px}
+.profil dd{margin:0; font-size:16px; font-weight:650}
+
+/* ---------- les deux cases ---------- */
+.cases{display:grid; grid-template-columns:1fr 1fr; gap:16px; margin:0 0 14px}
+@media(max-width:620px){.cases{grid-template-columns:1fr}}
+.case{
+  border:2px solid var(--rouge); background:var(--rouge-pale); border-radius:14px; padding:18px 20px; position:relative;
+}
+.case .titre{font-weight:750; font-size:17px; margin-bottom:8px; padding-right:34px}
+.case .exige{font-size:14.5px; color:var(--encre); opacity:.9; margin-bottom:12px}
+.case .verdict{font-size:14.5px; font-weight:700; color:var(--rouge)}
+.case .croix{
+  position:absolute; top:14px; right:16px; width:26px; height:26px; border-radius:50%;
+  background:var(--rouge); color:#fff; display:grid; place-items:center; font-weight:800; font-size:15px;
+}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]) .case .croix{color:#2a1618}}
+:root[data-theme="dark"] .case .croix{color:#2a1618}
+
+/* ---------- preuve / captures ---------- */
+figure{margin:0 0 20px}
+figure img{width:100%; height:auto; display:block; border:1px solid var(--bord); border-radius:12px; background:#fff}
+figure.etroite img{max-width:400px; margin:0 auto}
+figcaption{font-size:13.5px; color:var(--gris); margin-top:9px}
+.zoom{display:inline-block; font-size:13.5px; font-weight:600; text-decoration:none; margin-top:4px}
+
+/* ---------- les trois portes (interactif) ---------- */
+.portes{display:grid; grid-template-columns:repeat(3,1fr); gap:16px; margin:26px 0 20px; align-items:start}
+@media(max-width:780px){.portes{grid-template-columns:1fr}}
+.porte{
+  background:var(--carte); border:1px solid var(--bord); border-radius:16px;
+  box-shadow:var(--ombre); overflow:hidden; display:flex; flex-direction:column;
+  transition:transform .18s ease, box-shadow .18s ease, border-color .18s ease;
+}
+.porte:hover{transform:translateY(-2px); box-shadow:0 2px 4px rgba(0,0,40,.07), 0 14px 34px rgba(0,0,40,.11); border-color:var(--rouge)}
+.porte.ouverte{border-color:var(--rouge)}
+.porte-tete{
+  all:unset; box-sizing:border-box; cursor:pointer; display:block; width:100%;
+  padding:22px 20px 18px; text-align:center; font:inherit; color:inherit;
+}
+.porte-tete:focus-visible{outline:3px solid var(--bleu-clair); outline-offset:-3px}
+.porte-num{
+  width:46px; height:46px; margin:0 auto 12px; border-radius:50%;
+  background:var(--rouge-pale); color:var(--rouge); border:2px solid var(--rouge);
+  display:grid; place-items:center; font-size:21px; font-weight:800;
+}
+.porte-titre{display:block; font-size:17.5px; font-weight:750; margin-bottom:5px}
+.porte-quoi{display:block; font-size:14px; color:var(--gris); margin-bottom:14px}
+.porte-cta{
+  display:inline-flex; align-items:center; gap:7px; font-size:14.5px; font-weight:700; color:var(--bleu-clair);
+}
+.porte-cta .chev{transition:transform .22s ease; display:inline-block}
+.porte.ouverte .porte-cta .chev{transform:rotate(90deg)}
+.porte-panneau{
+  border-top:1px solid var(--bord); padding:0 20px; max-height:0; opacity:0;
+  transition:max-height .32s ease, opacity .22s ease, padding .32s ease;
+}
+.porte.ouverte .porte-panneau{max-height:760px; opacity:1; padding:18px 20px 20px}
+.porte-verdict{
+  display:inline-block; font-size:12.5px; font-weight:800; letter-spacing:.06em; text-transform:uppercase;
+  background:var(--rouge); color:#fff; padding:4px 11px; border-radius:999px; margin-bottom:12px;
+}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]) .porte-verdict{color:#2a1618}}
+:root[data-theme="dark"] .porte-verdict{color:#2a1618}
+.porte-verdict.attente{background:var(--ambre)}
+.porte-panneau p{font-size:15px; margin:0 0 11px}
+.porte-lien{font-size:14.5px; font-weight:700; text-decoration:none}
+.portes-aide{text-align:center; font-size:14.5px; color:var(--gris); margin:0 0 4px}
+
+/* ---------- gros carré historique ---------- */
+.histo-carre{
+  all:unset; box-sizing:border-box; cursor:pointer; display:block; width:100%;
+  background:linear-gradient(145deg, var(--bleu) 0%, #33338f 100%); color:#fff;
+  border-radius:18px; padding:30px 26px; text-align:center; margin:4px 0 22px;
+  box-shadow:0 2px 6px rgba(0,0,40,.12), 0 16px 40px rgba(0,0,60,.16);
+  transition:transform .18s ease, box-shadow .18s ease;
+}
+.histo-carre:hover{transform:translateY(-3px); box-shadow:0 4px 10px rgba(0,0,40,.16), 0 22px 54px rgba(0,0,60,.22)}
+.histo-carre:focus-visible{outline:3px solid var(--bleu-clair); outline-offset:3px}
+.histo-pic{font-size:34px; line-height:1; margin-bottom:12px; display:block}
+.histo-titre{display:block; font-size:clamp(21px,3.4vw,27px); font-weight:800; letter-spacing:-.02em; margin-bottom:7px}
+.histo-sous{display:block; font-size:15px; opacity:.9; max-width:520px; margin:0 auto 14px}
+.histo-ouvrir{display:inline-flex; align-items:center; gap:8px; font-size:14.5px; font-weight:700;
+  background:rgba(255,255,255,.17); padding:7px 16px; border-radius:999px}
+.histo-ouvrir .chev{transition:transform .22s ease; display:inline-block}
+.histo-carre.ouvert .histo-ouvrir .chev{transform:rotate(90deg)}
+.histo-corps{display:none; margin:0 0 24px}
+.histo-corps.visible{display:block; animation:apparait .3s ease}
+@keyframes apparait{from{opacity:0; transform:translateY(-6px)} to{opacity:1; transform:none}}
+.phase{margin:0 0 26px; border:1px solid var(--bord); border-radius:14px; background:var(--carte); overflow:hidden}
+.phase-tete{padding:14px 20px; border-bottom:1px solid var(--bord); background:var(--fond-2)}
+.phase-tete h3{margin:0 0 3px; font-size:17px}
+.phase-tete .periode{font-size:13px; color:var(--gris); font-weight:600; letter-spacing:.03em; text-transform:uppercase}
+.phase-corps{padding:16px 20px 18px}
+.evt{display:grid; grid-template-columns:96px 1fr; gap:14px; padding:7px 0; font-size:15px; align-items:baseline}
+@media(max-width:560px){.evt{grid-template-columns:1fr; gap:2px; padding:9px 0}}
+.evt .d{font-variant-numeric:tabular-nums; font-size:13px; font-weight:700; color:var(--bleu); white-space:nowrap}
+.evt.cle .t{font-weight:700}
+.bilan{margin:12px 0 0; padding:11px 15px; border-radius:10px; font-size:14.5px; font-weight:700}
+.bilan.ko{background:var(--rouge-pale); color:var(--rouge)}
+.bilan.attente{background:var(--ambre-pale); color:var(--ambre)}
+.bilan.ok{background:var(--vert-pale); color:var(--vert)}
+
+/* ---------- frise ---------- */
+.frise{position:relative; margin:22px 0 10px; padding-left:28px}
+.frise::before{content:""; position:absolute; left:7px; top:6px; bottom:6px; width:2px; background:var(--bord)}
+.jalon{position:relative; margin-bottom:20px}
+.jalon::before{
+  content:""; position:absolute; left:-27px; top:6px; width:14px; height:14px; border-radius:50%;
+  background:var(--fond); border:3px solid var(--bleu);
+}
+.jalon.fort::before{background:var(--rouge); border-color:var(--rouge)}
+.jalon .an{font-size:13px; font-weight:800; letter-spacing:.05em; color:var(--bleu); text-transform:uppercase}
+.jalon .quoi{font-weight:680; margin:1px 0 2px}
+.jalon .det{font-size:14.5px; color:var(--gris)}
+
+/* ---------- chiffres ---------- */
+.chiffres{display:grid; grid-template-columns:repeat(auto-fit,minmax(160px,1fr)); gap:14px; margin:0 0 20px}
+.chiffre{background:var(--carte); border:1px solid var(--bord); border-radius:14px; padding:18px; text-align:center; box-shadow:var(--ombre)}
+.chiffre .n{font-size:clamp(26px,4.5vw,34px); font-weight:800; line-height:1.05; color:var(--bleu); letter-spacing:-.02em}
+.chiffre .n.rouge{color:var(--rouge)}
+.chiffre .l{font-size:13.5px; color:var(--gris); margin-top:6px}
+
+table{width:100%; border-collapse:collapse; font-size:15px; margin:0 0 18px; background:var(--carte); border:1px solid var(--bord); border-radius:12px; overflow:hidden}
+th,td{text-align:left; padding:11px 14px; border-bottom:1px solid var(--bord)}
+th{background:var(--fond-2); font-size:13px; text-transform:uppercase; letter-spacing:.05em; color:var(--gris)}
+tr:last-child td{border-bottom:none}
+td.num{font-variant-numeric:tabular-nums; font-weight:650; white-space:nowrap}
+
+ul.propre{margin:0 0 16px; padding-left:20px}
+ul.propre li{margin-bottom:8px}
+
+ol.sorties{counter-reset:s; list-style:none; padding:0; margin:0}
+ol.sorties li{
+  counter-increment:s; position:relative; padding:16px 20px 16px 58px; margin-bottom:12px;
+  background:var(--carte); border:1px solid var(--bord); border-radius:14px;
+}
+ol.sorties li::before{
+  content:counter(s); position:absolute; left:18px; top:16px; width:26px; height:26px; border-radius:50%;
+  background:var(--bleu); color:#fff; display:grid; place-items:center; font-weight:800; font-size:14px;
+}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]) ol.sorties li::before{color:#0d0d14}}
+:root[data-theme="dark"] ol.sorties li::before{color:#0d0d14}
+
+/* ---------- sources ---------- */
+.sources{list-style:none; padding:0; margin:0}
+.sources li{padding:12px 0; border-bottom:1px solid var(--bord); font-size:15px}
+.sources li:last-child{border-bottom:none}
+.sources .quoi{display:block; color:var(--gris); font-size:13.5px; margin-top:2px}
+
+footer{padding:34px 0 46px; color:var(--gris); font-size:13.5px; border-top:1px solid var(--bord); margin-top:26px}
+svg{max-width:100%; height:auto}
+.marque{background:linear-gradient(transparent 62%, color-mix(in srgb, var(--rouge) 28%, transparent) 62%); font-weight:650}
+</style>
+</head>
+<body>
+
+<header class="hero">
+  <div class="wrap">
+    <span class="kicker">Algérie → France · depuis janvier 2026</span>
+    <h1>L'Épopée et ses traverses</h1>
+    <p class="chapo">Venir en France depuis l'Algérie : en amie, comme jeune au pair, en vue d'un mariage. Trois voies tentées, trois traverses sur le chemin — pendant que le mariage, lui, avance. Voici le parcours, pièce par pièce et règle par règle, et pourquoi il n'aurait pas ressemblé à ça il y a dix ou vingt ans.</p>
+    <p class="meta">Vérifié le 20 septembre 2026 sur <a href="https://france-visas.gouv.fr/fr/algerie">france-visas.gouv.fr</a> · toutes les sources sont liées en bas de page</p>
+  </div>
+</header>
+
+<nav>
+  <div class="wrap">
+    <a href="#trois">Les trois voies</a>
+    <a href="#depart">Le point de départ</a>
+    <a href="#quasi">Pourquoi « quasi »</a>
+    <a href="#regle">La règle officielle</a>
+    <a href="#piege">Les deux cases</a>
+    <a href="#droit">Ce que dit le droit</a>
+    <a href="#cout">La trace au fichier</a>
+    <a href="#aupair">Voie 2 · au pair</a>
+    <a href="#mariage">Voie 3 · mariage</a>
+    <a href="#avant">Avant / aujourd'hui</a>
+    <a href="#chiffres">Les chiffres</a>
+    <a href="#sorties">Les portes de sortie</a>
+    <a href="#sources">Sources</a>
+  </div>
+</nav>
+
+<!-- ============ 0 ============ -->
+<section id="trois">
+  <div class="wrap">
+    <h2>Les trois voies, en une page</h2>
+    <p class="lead">Trois statuts possibles pour se retrouver, trois démarches réellement engagées, trois traverses — chacune d'une nature différente.</p>
+
+    <p class="portes-aide">Cliquez sur une porte pour savoir pourquoi elle ne s'ouvre pas.</p>
+
+    <div class="portes">
+
+      <div class="porte">
+        <button class="porte-tete" type="button" aria-expanded="false" aria-controls="porte-1">
+          <span class="porte-num">1</span>
+          <span class="porte-titre">Venir en amie</span>
+          <span class="porte-quoi">Un simple visa de tourisme</span>
+          <span class="porte-cta"><span class="chev">›</span> Pourquoi ça ne marche pas&nbsp;?</span>
+        </button>
+        <div class="porte-panneau" id="porte-1">
+          <span class="porte-verdict">Refusé d'avance</span>
+          <p>Pour un visa de tourisme, l'État français demande de prouver qu'on est <strong>attaché à son pays</strong> : un emploi, un commerce, une retraite, ou des études en cours. C'est une liste fermée.</p>
+          <p>Or aucune de ces preuves n'est disponible : l'université refuse de délivrer le certificat de scolarité, et il n'y a ni emploi, ni bien immobilier. La seule autre case, « personne sans emploi », réclame un acte de mariage ou un titre de propriété.</p>
+          <p><strong>Résultat : le dossier est incomplet avant même d'être déposé</strong> — et le refus reste cinq ans au fichier européen des visas.</p>
+          <a class="porte-lien" href="#depart">→ Le détail et les captures officielles</a>
+        </div>
+      </div>
+
+      <div class="porte">
+        <button class="porte-tete" type="button" aria-expanded="false" aria-controls="porte-2">
+          <span class="porte-num">2</span>
+          <span class="porte-titre">Venir comme jeune au pair</span>
+          <span class="porte-quoi">Convention signée, dossier complet</span>
+          <span class="porte-cta"><span class="chev">›</span> Pourquoi c'est mort&nbsp;?</span>
+        </button>
+        <div class="porte-panneau" id="porte-2">
+          <span class="porte-verdict">Impossible par construction</span>
+          <p>Être au pair, <strong>ce n'est pas un emploi</strong>. C'est une convention : logement, repas, et un <strong>argent de poche</strong> d'au moins 320 € par mois. Ce n'est pas un salaire, et c'est voulu — précisément pour que ce ne soit pas un contrat de travail.</p>
+          <p>Au guichet, le 9 février 2026, on a réclamé… <strong>une autorisation de travail</strong>. Or ce statut n'en suppose aucune : c'est justement la convention qui en tient lieu.</p>
+          <p>La démarche a tout de même été tentée auprès de l'administration française : <strong>impossible</strong>. Ce n'est pas ce dossier-là qui était mal ficelé — la pièce réclamée n'existe pas pour ce statut.</p>
+          <a class="porte-lien" href="#aupair">→ Les textes qui le prouvent</a>
+        </div>
+      </div>
+
+      <div class="porte">
+        <button class="porte-tete" type="button" aria-expanded="false" aria-controls="porte-3">
+          <span class="porte-num">3</span>
+          <span class="porte-titre">Venir pour se marier</span>
+          <span class="porte-quoi">Demande déposée, audition passée</span>
+          <span class="porte-cta"><span class="chev">›</span> Où ça en est&nbsp;?</span>
+        </button>
+        <div class="porte-panneau" id="porte-3">
+          <span class="porte-verdict attente">Refusé · recours en cours</span>
+          <p>Celle-là est allée au bout : dossier instruit, et même <strong>une audition</strong> au consulat. Le 10 juin 2026, le consulat général de France à Oran a refusé.</p>
+          <p>Sur les seize motifs possibles du formulaire européen, <strong>une seule case est cochée</strong> : « les informations communiquées ne sont pas fiables ». On ne reproche donc pas un papier manquant — <strong>on met en doute la sincérité du projet</strong>.</p>
+          <p>Un recours a été déposé dans le délai de trente jours, complété en juillet. Il est <strong>toujours sans réponse</strong>.</p>
+          <a class="porte-lien" href="#mariage">→ La décision et la chronologie du recours</a>
+        </div>
+      </div>
+
+    </div>
+
+    <button class="histo-carre" type="button" aria-expanded="false" aria-controls="historique">
+      <span class="histo-pic">🗂️</span>
+      <span class="histo-titre">Historique complet</span>
+      <span class="histo-sous">Tout ce qui a été tenté depuis janvier 2026, date par date — et ce que chaque démarche a donné.</span>
+      <span class="histo-ouvrir"><span class="chev">›</span> Dérouler l'historique</span>
+    </button>
+
+    <div class="histo-corps" id="historique">
+
+      <div class="phase">
+        <div class="phase-tete">
+          <div class="periode">Janvier – février 2026</div>
+          <h3>Phase 1 · La voie « jeune au pair »</h3>
+        </div>
+        <div class="phase-corps">
+        <div class="evt"><span class="d">04/01/2026</span><span class="t">Demande introduite auprès du centre agréé.</span></div>
+        <div class="evt"><span class="d">12/01 – 21/01</span><span class="t">Une semaine à tenter de joindre le prestataire : appels qui aboutissent puis tombent dans le vide, facturés quand même ; tickets ouverts, réponses automatiques renvoyant au même numéro.</span></div>
+        <div class="evt"><span class="d">27/01/2026</span><span class="t">Le prestataire demande des précisions : visas déjà obtenus, situation socio-professionnelle, ville de travail.</span></div>
+        <div class="evt"><span class="d">28/01/2026</span><span class="t">Réorientation : le dossier doit être déposé à Oran, pas à Alger. Annulation du rendez-vous d'Alger, nouvelle demande de créneau à Oran.</span></div>
+        <div class="evt"><span class="d">01/02/2026</span><span class="t">Rendez-vous attribué à Oran pour le 9 février.</span></div>
+        <div class="evt"><span class="d">04 – 05/02</span><span class="t">Billet d'avion provisoire et assurance voyage de douze mois souscrits.</span></div>
+        <div class="evt cle"><span class="d">09/02/2026</span><span class="t"><strong>Au guichet, on exige une autorisation de travail.</strong> Le dossier est repris plutôt que laissé sans garantie, avec le passeport.</span></div>
+        <div class="evt"><span class="d">10/02/2026</span><span class="t">Tentative d'obtenir cette autorisation de travail en ligne sur la plateforme de l'administration française.</span></div>
+        <div class="evt"><span class="d">10 – 20/02</span><span class="t">En parallèle, démarches d'inscription à des cours de français en Bretagne. Réponse négative.</span></div>
+        <div class="evt"><span class="d">14 – 16/02</span><span class="t">Demande de réouverture du dossier. Le prestataire répond qu'il faut reprendre un nouveau rendez-vous.</span></div>
+        <div class="evt cle"><span class="d">Février 2026</span><span class="t">L'autorisation de travail pour un séjour « jeune au pair » se révèle <strong>impossible à obtenir</strong>.</span></div>
+          <div class="bilan ko">Résultat : abandonné. Aucune décision consulaire — le dossier n'a jamais atteint le consulat.</div>
+        </div>
+      </div>
+
+      <div class="phase">
+        <div class="phase-tete">
+          <div class="periode">Mars – juin 2026</div>
+          <h3>Phase 2 · La voie « visa en vue du mariage »</h3>
+        </div>
+        <div class="phase-corps">
+        <div class="evt"><span class="d">01/03/2026</span><span class="t">Constitution du dossier de publication des bans. La mairie exige une audition en personne.</span></div>
+        <div class="evt"><span class="d">04/03/2026</span><span class="t">Établissement des attestations d'accueil.</span></div>
+        <div class="evt"><span class="d">07 – 26/03</span><span class="t">Envoi depuis l'Algérie des actes d'état civil par lettre recommandée ; réception en France trois semaines plus tard.</span></div>
+        <div class="evt"><span class="d">20 – 27/03</span><span class="t">Dossier de publication des bans transmis.</span></div>
+        <div class="evt"><span class="d">28/03/2026</span><span class="t">Préparation du dossier de visa et prise de rendez-vous.</span></div>
+        <div class="evt"><span class="d">30/03/2026</span><span class="t">Rendez-vous en visioconférence avec le notaire pour un contrat de mariage en séparation de biens. La présence physique est exigée pour la signature.</span></div>
+        <div class="evt"><span class="d">Avril 2026</span><span class="t">Audition en mairie côté français. Envoi des attestations d'accueil par courrier.</span></div>
+        <div class="evt"><span class="d">25/04/2026</span><span class="t">Réception en Algérie des attestations d'accueil, timbres fiscaux et acte de naissance.</span></div>
+        <div class="evt"><span class="d">26 – 27/04</span><span class="t">Rendez-vous attribué puis payé et confirmé.</span></div>
+        <div class="evt"><span class="d">07/05/2026</span><span class="t">Créneau attribué pour l'audition, prévue en mairie le 13 juin.</span></div>
+        <div class="evt"><span class="d">24/05/2026</span><span class="t">Réception de la convocation à l'audition par courrier.</span></div>
+        <div class="evt cle"><span class="d">26/05/2026</span><span class="t"><strong>Dépôt du dossier de visa de court séjour en vue de mariage.</strong> Transmis au consulat le jour même.</span></div>
+        <div class="evt"><span class="d">01/06/2026</span><span class="t">Début du traitement du dossier par le consulat.</span></div>
+        <div class="evt"><span class="d">03 – 09/06</span><span class="t">Plusieurs tentatives de joindre le consulat, par téléphone puis par courriel. Aucune réponse.</span></div>
+        <div class="evt"><span class="d">06/06/2026</span><span class="t">Audition reportée au 20 juin, mariage reporté au 1er août.</span></div>
+        <div class="evt"><span class="d">10/06/2026</span><span class="t">Décision du consulat.</span></div>
+        <div class="evt cle"><span class="d">11/06/2026</span><span class="t"><strong>Visa refusé.</strong> Motif 10 : « les informations communiquées pour justifier l'objet et les conditions du séjour ne sont pas fiables ».</span></div>
+          <div class="bilan ko">Résultat : refusé. Une seule case cochée sur les seize du formulaire européen.</div>
+        </div>
+      </div>
+
+      <div class="phase">
+        <div class="phase-tete">
+          <div class="periode">Juin – septembre 2026</div>
+          <h3>Phase 3 · Le recours contre le refus</h3>
+        </div>
+        <div class="phase-corps">
+        <div class="evt"><span class="d">22/06/2026</span><span class="t">Rédaction et révision du recours.</span></div>
+        <div class="evt cle"><span class="d">23 – 24/06</span><span class="t">Recours envoyé en recommandé à la Commission de recours de Nantes, dans le délai de trente jours. Confirmation d'expédition reçue.</span></div>
+        <div class="evt"><span class="d">26/06/2026</span><span class="t">Avis de réception de la lettre recommandée.</span></div>
+        <div class="evt"><span class="d">20/07/2026</span><span class="t">Nantes réclame le renvoi d'un exemplaire signé du recours avant le 1er août.</span></div>
+        <div class="evt"><span class="d">22/07/2026</span><span class="t">Exemplaire signé réexpédié par courrier express depuis l'Algérie.</span></div>
+        <div class="evt cle"><span class="d">30/07/2026</span><span class="t">Le courrier arrive à Nantes — dans les délais.</span></div>
+        <div class="evt"><span class="d">14/09/2026</span><span class="t">Recours toujours en cours d'instruction.</span></div>
+        <div class="evt cle"><span class="d">30/09/2026</span><span class="t"><strong>Échéance : sans réponse à cette date, le recours est réputé rejeté.</strong></span></div>
+          <div class="bilan attente">Résultat : en attente. C'est la seule porte qui n'est pas encore définitivement fermée.</div>
+        </div>
+      </div>
+
+      <div class="phase">
+        <div class="phase-tete">
+          <div class="periode">Juillet – septembre 2026</div>
+          <h3>En parallèle · Le mariage lui-même, et les retrouvailles</h3>
+        </div>
+        <div class="phase-corps">
+        <div class="evt cle"><span class="d">04 – 09/07</span><span class="t">Faute de pouvoir se retrouver en France, rendez-vous <strong>en Tunisie</strong> : cinq nuits, pays tiers accessible aux deux.</span></div>
+        <div class="evt"><span class="d">11/07/2026</span><span class="t">Étude d'un visa algérien de court séjour — dans l'autre sens, pour que le déplacement soit français.</span></div>
+        <div class="evt"><span class="d">Juillet 2026</span><span class="t">Démarches auprès de la wilaya d'Oran sur le dossier de mariage mixte.</span></div>
+        <div class="evt"><span class="d">23/07/2026</span><span class="t">Nouveau rendez-vous notarial en visioconférence pour le régime de séparation de biens.</span></div>
+        <div class="evt"><span class="d">27/07/2026</span><span class="t">Constitution d'une attestation d'hébergement pour le séjour en Algérie ; traduction et envoi du dossier de certificat de capacité à mariage.</span></div>
+        <div class="evt cle"><span class="d">18/08/2026</span><span class="t"><strong>Avis favorable</strong> obtenu côté français, assorti d'un délai de trente jours.</span></div>
+        <div class="evt"><span class="d">23/08/2026</span><span class="t">Le dossier de certificat de capacité à mariage parvient au consulat de France à Oran. Aucun accusé de réception par courriel.</span></div>
+        <div class="evt"><span class="d">18/09/2026</span><span class="t">Retour du consulat, transmis par le ministère de l'Europe et des Affaires étrangères.</span></div>
+          <div class="bilan ok">Le mariage avance. C'est le déplacement, et lui seul, qui reste bloqué.</div>
+        </div>
+      </div>
+
+      <div class="encadre rouge">
+        <p><strong>Neuf mois, trois procédures, deux pays, et pas une seule fois la possibilité de se retrouver en France.</strong> Les seules retrouvailles ont eu lieu dans un pays tiers, parce que c'était le seul endroit où les deux pouvaient entrer.</p>
+      </div>
+
+    </div>
+
+    <div class="encadre rouge">
+      <p><strong>Ce document ne plaide rien.</strong> Il rassemble les règles publiées par l'État français et les décisions reçues, pour qu'on puisse constater soi-même où chaque voie s'arrête. Chaque affirmation est liée à sa source en bas de page ; les pièces nominatives sont accessibles séparément, à la famille uniquement.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 1 ============ -->
+<section id="depart">
+  <div class="wrap">
+    <h2>Voie 1 · En amie — le point de départ</h2>
+    <p class="lead">Une conversation avec Gemini, archivée en PDF.</p>
+
+    <p>Dans cet échange, Gemini décrit d'abord la procédure normale, puis conclut — une fois la situation réelle précisée — que déposer le dossier expose à un <strong>« refus quasi-certain »</strong>. Cette page vérifie cette conclusion pièce par pièce.</p>
+
+    <p class="small">La conversation complète est archivée en PDF, mais elle n'est pas publiée ici : elle contient des éléments personnels. Elle est consultable dans le <a href="https://drive.google.com/drive/folders/1esPsHhqpGHkjh8FaM0uOe3jKOcYvaCZu">dossier en accès restreint</a>, avec les autres pièces.</p>
+
+    <h3>Le profil, réduit aux critères qui comptent</h3>
+    <dl class="profil">
+      <div><dt>Nationalité</dt><dd>Algérienne</dd></div>
+      <div><dt>Âge</dt><dd>29 ans</dd></div>
+      <div><dt>Résidence</dt><dd>Algérie</dd></div>
+      <div><dt>Statut</dt><dd>Doctorat en cours</dd></div>
+      <div><dt>Revenus propres</dt><dd>Aucun</dd></div>
+      <div><dt>Hébergement</dt><dd>Chez ses parents</dd></div>
+      <div><dt>Situation familiale</dt><dd>Célibataire</dd></div>
+      <div><dt>Bien immobilier</dt><dd>Aucun</dd></div>
+      <div><dt>Visa demandé</dt><dd>Court séjour, tourisme</dd></div>
+    </dl>
+
+    <div class="encadre rouge">
+      <p><strong>Le fait décisif :</strong> l'administration universitaire refuse de délivrer un certificat de scolarité ou une attestation d'inscription pour une démarche personnelle. Sans ce document, le statut d'étudiant ne peut pas être prouvé.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 2 ============ -->
+<section id="quasi">
+  <div class="wrap">
+    <h2>Voie 1 · Pourquoi Gemini dit « quasi »</h2>
+    <p class="lead">Ce n'est pas une hésitation sur les faits. C'est une précision juridique.</p>
+
+    <blockquote>
+      <p>« J'utilise le mot “quasi” par rigueur, pour une raison juridique très simple : en droit, un risque zéro ou un refus à 100 % n'existe pas de façon absolue. Le consulat conserve ce qu'on appelle un pouvoir souverain d'appréciation. »</p>
+      <cite>Gemini, dans la conversation citée</cite>
+    </blockquote>
+
+    <p>Autrement dit : <span class="marque">« quasi » ne porte pas sur la solidité du dossier, il porte sur le fait qu'aucune décision administrative ne peut être garantie à l'avance.</span> Un agent consulaire garde le droit d'accorder un visa même à un dossier atypique. Personne — ni une IA, ni un avocat, ni un intermédiaire — ne peut donc écrire « refus à 100 % ».</p>
+
+    <p>Ce que Gemini écrit juste après est en revanche sans nuance :</p>
+
+    <blockquote>
+      <p>« Sans preuve d'études ni emploi ni biens immobiliers, le visa sera refusé. […] Votre dossier ne coche aucune des cases réglementaires imposées par le Code communautaire des visas Schengen. »</p>
+      <cite>Gemini, dans la conversation citée</cite>
+    </blockquote>
+
+    <div class="encadre">
+      <p><strong>À retenir :</strong> « quasi-certain » n'est pas « peut-être ». C'est la formulation la plus forte qu'on puisse employer sans mentir sur la nature d'une décision discrétionnaire.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 3 ============ -->
+<section id="regle">
+  <div class="wrap">
+    <h2>Voie 1 · La règle officielle, capture à l'appui</h2>
+    <p class="lead">Ce n'est pas une interprétation : c'est écrit sur le site de l'État français.</p>
+
+    <p>L'assistant visa de <strong>France-Visas</strong> (le site officiel de l'État) génère la liste des pièces exigées selon le profil exact du demandeur. Voici le profil saisi, et le résultat obtenu le 20 septembre 2026 :</p>
+
+    <figure class="etroite">
+      <img src="img/france-visas-profil.png" alt="Récapitulatif France-Visas : nationalité algérienne, 29 ans, résidence Algérie, court séjour 90 jours, destination France métropolitaine, passeport ordinaire, projet tourisme / visite privée">
+      <figcaption>Le profil saisi dans l'assistant officiel — <a href="https://france-visas.gouv.fr/assistant-visa">france-visas.gouv.fr/assistant-visa</a></figcaption>
+    </figure>
+
+    <p>Dans la liste des justificatifs produite, une rubrique s'appelle <strong>« Preuve d'installation dans le pays de résidence »</strong>. Son premier point est <strong>« Situation professionnelle »</strong>, et il est obligatoire :</p>
+
+    <figure>
+      <img src="img/france-visas-situation-professionnelle.png" alt="Capture de la rubrique Preuve d'installation dans le pays de résidence / Situation professionnelle sur France-Visas, listant les justificatifs exigés par catégorie : salarié, commerçant, agriculteurs, fonctionnaires, retraités, étudiants ou mineurs, personnes sans emploi">
+      <figcaption>Capture France-Visas, 20/09/2026 — rubrique « Preuve d'installation dans le pays de résidence ». <a href="img/france-visas-page-complete.png">Voir la page complète</a></figcaption>
+    </figure>
+
+    <p>Chaque catégorie a son justificatif imposé : salarié → attestation d'emploi + affiliation CNAS ; commerçant → registre du commerce + CASNOS + formulaire C20 ; agriculteur → carte d'agriculteur ; fonctionnaire → arrêté de nomination ; retraité → attestation de pension. <strong>Il n'existe pas de case « sans justificatif ».</strong></p>
+  </div>
+</section>
+
+<!-- ============ 4 ============ -->
+<section id="piege">
+  <div class="wrap">
+    <h2>Voie 1 · Les deux seules cases possibles — et aucune ne peut être cochée</h2>
+    <p class="lead">C'est là que le dossier se bloque, mécaniquement.</p>
+
+    <p>Pour ce profil, la liste officielle n'ouvre que deux catégories. Les voici, mot pour mot, avec ce qu'elles exigent :</p>
+
+    <div class="cases">
+      <div class="case">
+        <div class="croix">✕</div>
+        <div class="titre">Étudiants ou mineurs</div>
+        <p class="exige">« justificatifs de la situation socio-professionnelle des parents <strong>et certificat de scolarité ou carte d'étudiant</strong> »</p>
+        <p class="verdict">Impossible : l'université refuse de délivrer le certificat de scolarité.</p>
+      </div>
+      <div class="case">
+        <div class="croix">✕</div>
+        <div class="titre">Personnes sans emploi</div>
+        <p class="exige">« preuves d'une situation socio-économique adéquate (<strong>certificat de mariage, livret de famille, documents confirmant la propriété d'un bien immobilier</strong>) »</p>
+        <p class="verdict">Impossible : célibataire, sans enfant, sans bien immobilier ni bail à son nom.</p>
+      </div>
+    </div>
+
+    <div class="encadre rouge">
+      <p><strong>Le blocage est structurel, pas subjectif.</strong> Impossible de se déclarer étudiant, faute de preuve ; et en basculant dans « sans emploi », les preuves réclamées sont précisément celles qu'une personne de 29 ans, célibataire, en doctorat et vivant chez ses parents, n'a pas. La rubrique est alors comptabilisée comme <em>non justifiée</em> — et c'est une rubrique obligatoire.</p>
+    </div>
+
+    <p>S'y ajoute la rubrique <strong>« Ressources »</strong> de la même liste officielle, qui exige « relevés de compte bancaire originaux des 3 derniers mois (émanant de la banque et non édités via internet), 3 derniers bulletins de paie, prise en charge des frais par une personne privée (avec preuves de ressources de l'hôte ou du garant), ou attestation de pension ». Sans revenus propres, tout repose sur un garant — ce qui renforce, et non corrige, l'absence d'autonomie financière.</p>
+  </div>
+</section>
+
+<!-- ============ 5 ============ -->
+<section id="droit">
+  <div class="wrap">
+    <h2>Le droit européen qui régit les trois voies</h2>
+    <p class="lead">Le consulat ne « décide pas au feeling » : il remplit un formulaire à cases.</p>
+
+    <p>Les visas de court séjour sont régis par le <strong>code communautaire des visas</strong> — règlement (CE) n° 810/2009. Deux articles font tout :</p>
+
+    <div class="carte">
+      <h3>Article 21 — l'examen</h3>
+      <p>Le consulat doit vérifier que le demandeur remplit les conditions d'entrée, et apprécier en particulier <strong>le risque d'immigration illégale et la volonté de quitter le territoire avant l'expiration du visa</strong>. C'est l'ancrage dans le pays de résidence — emploi, famille, biens — qui sert à établir cette volonté de retour.</p>
+    </div>
+
+    <div class="carte">
+      <h3>Article 32 — le refus</h3>
+      <p>Le visa est refusé notamment si le demandeur ne fournit pas la justification de l'objet et des conditions du séjour, s'il ne prouve pas ses moyens de subsistance, ou <strong>si « la volonté du demandeur de quitter le territoire des États membres avant l'expiration du visa n'a pas pu être établie »</strong>. Le refus est notifié au moyen du <strong>formulaire type de l'annexe VI</strong> : l'agent coche le motif dans une liste fermée.</p>
+    </div>
+
+    <div class="encadre ambre">
+      <p>Dans ce dossier, deux cases de ce formulaire sont directement ouvertes : <strong>« les conditions du séjour ne sont pas justifiées »</strong> et <strong>« la volonté de quitter le territoire n'a pas pu être établie »</strong>. Ce sont exactement les deux motifs que Gemini annonce.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 6 ============ -->
+<section id="cout">
+  <div class="wrap">
+    <h2>Ce qu'un dépôt refusé laisse derrière lui</h2>
+    <p class="lead">Le vrai coût n'est pas l'argent : c'est la trace.</p>
+
+    <div class="chiffres">
+      <div class="chiffre"><div class="n rouge">5 ans</div><div class="l">durée pendant laquelle un refus reste consultable par tous les consulats de l'espace Schengen</div></div>
+    </div>
+
+    <div class="encadre rouge">
+      <p><strong>Chaque demande laisse une trace, accordée ou non.</strong> Depuis 2011, toute demande de visa est enregistrée avec les empreintes digitales dans le <strong>VIS</strong>, le fichier d'information sur les visas commun à tout l'espace Schengen. Un refus y est visible par n'importe quel consulat Schengen lors des demandes suivantes, pendant cinq ans. Un dossier déposé « pour voir » n'est donc pas un simple coup d'essai : <span class="marque">il pèse sur la demande d'après</span>.</p>
+    </div>
+
+    <p class="small">Accessoirement, côté finances : les frais de dossier (90 €, soit environ 13 600 DZD) sont, selon France-Visas, « conservés par l'administration, même en cas de refus de visa », et les frais de service du prestataire (environ 29 €) « ne sont pas remboursables, sauf cas exceptionnel ». <a href="img/france-visas-frais.png">Voir la capture du tarif officiel</a>. C'est la partie la moins grave de l'affaire.</p>
+  </div>
+</section>
+
+<!-- ============ VOIE 2 ============ -->
+<section id="aupair">
+  <div class="wrap">
+    <h2>Voie 2 · Comme jeune au pair</h2>
+    <p class="lead">Une voie fermée par une exigence que le statut lui-même rend impossible à satisfaire.</p>
+
+    <h3>Ce qui a été fait</h3>
+    <p>Un dossier complet a été constitué : <strong>convention CERFA 15973*01</strong> « conclue entre le jeune au pair et la famille d'accueil », signée le 30 décembre 2025, accompagnée du CV, de la lettre d'invitation, d'une assurance, d'un certificat de niveau d'anglais et des diplômes traduits. Rendez-vous pris et frais payés auprès du centre agréé.</p>
+
+    <div class="encadre ambre">
+      <p><strong>Il n'existe aucun refus écrit pour cette voie, et il ne faut pas en inventer un.</strong> Le dossier n'a jamais atteint le consulat : au guichet, le 9 février 2026, une <em>autorisation de travail</em> a été exigée. Le dossier a été repris plutôt que laissé sans garantie, avec le passeport. Le dossier a été repris — laisser un passeport sans garantie n'était pas envisageable. Il n'y a donc ni décision, ni motif coché, ni recours possible : la demande s'est arrêtée avant d'exister.</p>
+    </div>
+
+    <h3>Pourquoi l'exigence est impossible à satisfaire</h3>
+
+    <p>C'est ici que la voie se referme, et pour une raison de principe : <span class="marque">le statut de jeune au pair est défini par l'absence de contrat de travail.</span></p>
+
+    <div class="carte">
+      <h3>Ce que le droit français prévoit</h3>
+      <ul class="propre">
+        <li>Le séjour « jeune au pair » relève du <strong>code de l'entrée et du séjour des étrangers et du droit d'asile</strong> (articles L. 426-22 et R. 426-13 à R. 426-15 ; anciennement L. 313-9 et R. 313-12, référence portée sur le formulaire CERFA).</li>
+        <li>La relation est organisée par une <strong>convention</strong>, pas par un contrat de travail : accueil dans une famille, en échange de tâches légères et de garde d'enfants, <strong>dans le but d'améliorer ses connaissances linguistiques</strong>.</li>
+        <li>La contrepartie n'est pas un salaire mais un <strong>argent de poche</strong>, dont le montant minimal mensuel est fixé par l'<strong>arrêté du 4 mars 2019</strong> (320 € par mois).</li>
+        <li>Le cadre est plafonné : <strong>25 heures par semaine maximum</strong>, au moins <strong>une journée complète de repos</strong>, et le temps nécessaire pour suivre des cours.</li>
+        <li>Conditions d'éligibilité : <strong>avoir entre 18 et 30 ans</strong>, et être accueilli par une famille avec laquelle on n'a <strong>aucun lien de parenté</strong>.</li>
+      </ul>
+    </div>
+
+    <div class="encadre rouge">
+      <p><strong>Le piège est dans les mots.</strong> La page France-Visas décrit la convention comme précisant « les conditions d'emploi, de rémunération ». Lue au guichet, cette phrase devient « autorisation de travail ». Mais le texte qui crée le statut, lui, parle d'<strong>argent de poche</strong> — et c'est délibéré : l'argent de poche existe précisément <span class="marque">pour que la relation au pair ne soit pas assimilée à un emploi salarié</span>. Exiger une autorisation de travail pour un dossier au pair, c'est réclamer une pièce que le statut ne prévoit pas — et la tentative de l'obtenir malgré tout, en février 2026, s'est heurtée à cette impossibilité.</p>
+    </div>
+
+    <div class="encadre ambre">
+      <p><strong>Et cette porte a une date de péremption.</strong> La condition d'âge est de 18 à 30 ans. Elle ne se rouvrira pas : chaque année écoulée la referme un peu plus, indépendamment de toute décision administrative.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ============ VOIE 3 ============ -->
+<section id="mariage">
+  <div class="wrap">
+    <h2>Voie 3 · En vue du mariage</h2>
+    <p class="lead">La seule des trois à être allée jusqu'à une décision. Elle a été refusée — et le motif retenu n'est pas celui qu'on imagine.</p>
+
+    <h3>Ce qui a été fait</h3>
+    <p>Une demande de visa a été déposée en vue d'un mariage prévu le <strong>27 juin 2026</strong>. Le dossier est allé au bout de la procédure : instruction par le consulat, et <strong>convocation à une audition préalable le 9 avril 2026</strong> — une étape qui n'intervient que lorsque l'administration examine la sincérité du projet, pas la complétude des pièces.</p>
+
+    <h3>La décision</h3>
+    <p>Le <strong>10 juin 2026</strong>, le <strong>consulat général de France à Oran</strong> a refusé le visa, sur le formulaire type européen — celui de l'annexe VI du code des visas, décrit plus haut. Sur les seize motifs possibles, <strong>un seul est coché</strong> :</p>
+
+    <blockquote>
+      <p>☒ <strong>10. Les informations communiquées pour justifier l'objet et les conditions du séjour envisagé ne sont pas fiables.</strong></p>
+      <cite>Formulaire de refus, consulat général de France à Oran, 10/06/2026 — les quinze autres cases sont vides, la rubrique « Autres remarques » également.</cite>
+    </blockquote>
+
+    <div class="encadre rouge">
+      <p><strong>Ce motif dit quelque chose de précis, et il faut le lire exactement.</strong> Ce n'est pas le motif 2 (« l'objet et les conditions du séjour n'ont pas été justifiés ») : on ne reproche pas un dossier incomplet. Ce n'est pas le motif 13 (« doutes quant à votre volonté de quitter le territoire ») : on ne reproche pas un risque de maintien. <span class="marque">Le motif 10 met en cause la fiabilité de ce qui a été déclaré</span> — c'est-à-dire la crédibilité du projet lui-même. Aucune pièce supplémentaire ne répond mécaniquement à ce reproche : c'est une appréciation, et c'est exactement ce qu'un recours conteste.</p>
+    </div>
+
+    <h3>Le recours, obligatoire, et toujours pendant</h3>
+    <p>Le formulaire de refus indique lui-même la marche à suivre : contester la décision « auprès du sous-directeur des visas, BP 83609, 44036 Nantes cedex 1, dans un délai de trente jours », étant précisé que « <strong>la saisine du sous-directeur des visas est un préalable obligatoire à tout recours contentieux</strong> ». Le tribunal administratif de Nantes est la juridiction désignée pour la suite.</p>
+
+    <div class="frise">
+      <div class="jalon fort">
+        <div class="an">10 juin 2026</div>
+        <div class="quoi">Refus notifié</div>
+        <div class="det">Consulat général de France à Oran. Motif 10, seul coché.</div>
+      </div>
+      <div class="jalon">
+        <div class="an">24 juin 2026</div>
+        <div class="quoi">Recours déposé</div>
+        <div class="det">Saisine de la Commission de recours contre les décisions de refus de visa, à Nantes — dans le délai de trente jours. Envoi en recommandé, confirmation d'expédition à l'appui.</div>
+      </div>
+      <div class="jalon">
+        <div class="an">1er juillet 2026</div>
+        <div class="quoi">Courrier de la Commission de recours</div>
+        <div class="det">Accusé de la Commission, à Nantes.</div>
+      </div>
+      <div class="jalon">
+        <div class="an">21 juillet 2026</div>
+        <div class="quoi">Complément de recours déposé</div>
+        <div class="det">Pièces complémentaires transmises à l'appui du recours.</div>
+      </div>
+      <div class="jalon">
+        <div class="an">30 juillet 2026</div>
+        <div class="quoi">Recours reçu à Nantes</div>
+        <div class="det">Réception confirmée.</div>
+      </div>
+      <div class="jalon fort">
+        <div class="an">Aujourd'hui</div>
+        <div class="quoi">Toujours sans décision</div>
+        <div class="det">Le recours est pendant. Tant qu'il n'est pas tranché, la voie du mariage n'est ni rouverte, ni définitivement close.</div>
+      </div>
+    </div>
+
+    <div class="encadre">
+      <p><strong>Les pièces de cette voie</strong> — formulaire de refus, recours et son complément, accusés de réception — sont nominatives et ne figurent pas sur cette page. Elles sont consultables séparément, en accès restreint.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 7 ============ -->
+<section id="avant">
+  <div class="wrap">
+    <h2>Pourquoi ce n'était pas comme ça il y a 10 ou 20 ans</h2>
+    <p class="lead">Cinq changements concrets, datés, qui expliquent l'écart entre le souvenir et la réalité d'aujourd'hui.</p>
+
+    <div class="frise">
+      <div class="jalon">
+        <div class="an">Avant 2010</div>
+        <div class="quoi">Le refus n'avait pas à être motivé</div>
+        <div class="det">Le dossier partait au consulat, la réponse revenait sans explication et sans voie de recours organisée. C'est le code des visas, applicable au <strong>5 avril 2010</strong>, qui a imposé la motivation écrite du refus et le droit de recours — en formalisant du même coup la grille d'évaluation qui s'applique aujourd'hui.</div>
+      </div>
+      <div class="jalon fort">
+        <div class="an">11 octobre 2011</div>
+        <div class="quoi">La biométrie et le fichier VIS arrivent — l'Afrique du Nord en premier</div>
+        <div class="det">Le VIS a été déployé région par région, et <strong>l'Algérie faisait partie de la toute première région couverte</strong>, avec le Maroc, la Tunisie, la Libye, l'Égypte et la Mauritanie. Depuis cette date : empreintes digitales obligatoires, historique de chaque demande consultable par tous les consulats Schengen. Avant, un refus ne suivait pas le demandeur.</div>
+      </div>
+      <div class="jalon">
+        <div class="an">Années 2010</div>
+        <div class="quoi">Le guichet consulaire devient un prestataire privé payant</div>
+        <div class="det">En Algérie, le dépôt passe désormais par les centres <strong>Capago</strong> (Alger, Oran, Annaba, Constantine). Rendez-vous obligatoire, prépaiement des frais de service pour le confirmer, délai d'obtention d'un créneau d'<strong>environ un mois</strong> — et bien plus en haute saison (juin à novembre). On ne se présente plus au consulat.</div>
+      </div>
+      <div class="jalon fort">
+        <div class="an">2 février 2020</div>
+        <div class="quoi">Le visa devient un levier diplomatique — article 25 bis</div>
+        <div class="det">La révision du code des visas (règlement UE 2019/1155) crée un mécanisme qui permet d'appliquer les règles de façon <strong>restrictive envers les ressortissants d'un pays jugé insuffisamment coopératif en matière de réadmission</strong> : moins de visas à entrées multiples, délais allongés, frais plus élevés. Le visa touristique n'est plus seulement un acte administratif individuel.</div>
+      </div>
+      <div class="jalon fort">
+        <div class="an">Septembre 2021</div>
+        <div class="quoi">La France divise par deux les visas accordés aux Algériens</div>
+        <div class="det">Décision annoncée publiquement : <strong>−50 % pour l'Algérie et le Maroc, −30 % pour la Tunisie</strong>, au motif d'un défaut de coopération sur la réadmission. Une décision qualifiée à l'époque d'« inédite » par le gouvernement français lui-même. Le volume a été partiellement rétabli depuis, mais le niveau d'exigence des dossiers, lui, n'est jamais redescendu.</div>
+      </div>
+      <div class="jalon">
+        <div class="an">2007 → 2024</div>
+        <div class="quoi">Le tarif a augmenté de 50 %</div>
+        <div class="det"><strong>60 €</strong> de 2006 à 2020, <strong>80 €</strong> à partir du 2 février 2020, <strong>90 €</strong> depuis le 11 juin 2024 — auxquels s'ajoutent les ~29 € de frais de service. Aucun de ces montants n'est remboursé en cas de refus.</div>
+      </div>
+    </div>
+
+    <div class="encadre">
+      <p><strong>En résumé :</strong> il y a vingt ans, un dossier incomplet pouvait passer, le refus ne laissait pas de trace et ne coûtait presque rien. Aujourd'hui, la liste des pièces est générée automatiquement par profil, le refus est motivé par une case cochée dans un formulaire européen, et il reste cinq ans dans un fichier partagé. <span class="marque">Ce n'est pas le même examen, et ce n'est plus le même enjeu.</span></p>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 8 ============ -->
+<section id="chiffres">
+  <div class="wrap">
+    <h2>Les chiffres, pour situer</h2>
+    <p class="lead">Le visa France reste largement délivré — mais plus à n'importe quel dossier.</p>
+
+    <h3>Visas délivrés par la France aux ressortissants algériens</h3>
+
+    <svg viewBox="0 0 700 300" role="img" aria-label="Graphique en barres des visas délivrés par la France aux Algériens : 200 000 en 2012, 413 000 en 2017, 274 421 en 2019, 73 276 en 2020, 63 649 en 2021, 131 264 en 2022, 209 723 en 2023, 182 541 en 2025">
+      <g font-family="-apple-system,Segoe UI,Roboto,sans-serif" font-size="12">
+        <line x1="52" y1="250" x2="690" y2="250" stroke="currentColor" opacity=".25"/>
+        <line x1="52" y1="250" x2="52" y2="20" stroke="currentColor" opacity=".25"/>
+        <text x="46" y="254" text-anchor="end" opacity=".55">0</text>
+        <text x="46" y="140" text-anchor="end" opacity=".55">200k</text>
+        <line x1="52" y1="136" x2="690" y2="136" stroke="currentColor" opacity=".12"/>
+        <text x="46" y="30" text-anchor="end" opacity=".55">400k</text>
+        <line x1="52" y1="26" x2="690" y2="26" stroke="currentColor" opacity=".12"/>
+
+        <!-- hauteur = valeur / 413000 * 224 -->
+        <rect x="70"  y="141" width="56" height="109" rx="3" fill="#7a7ad8"/>
+        <rect x="148" y="26"  width="56" height="224" rx="3" fill="#000091"/>
+        <rect x="226" y="101" width="56" height="149" rx="3" fill="#3b3bb0"/>
+        <rect x="304" y="210" width="56" height="40"  rx="3" fill="#b0b0d8"/>
+        <rect x="382" y="215" width="56" height="35"  rx="3" fill="#b0b0d8"/>
+        <rect x="460" y="179" width="56" height="71"  rx="3" fill="#8a8ad0"/>
+        <rect x="538" y="136" width="56" height="114" rx="3" fill="#4d4dbd"/>
+        <rect x="616" y="151" width="56" height="99"  rx="3" fill="#c9191e"/>
+
+        <g text-anchor="middle" font-weight="600">
+          <text x="98"  y="133" font-size="11">200k</text>
+          <text x="176" y="18"  font-size="11">413k</text>
+          <text x="254" y="93"  font-size="11">274k</text>
+          <text x="332" y="202" font-size="11">73k</text>
+          <text x="410" y="207" font-size="11">64k</text>
+          <text x="488" y="171" font-size="11">131k</text>
+          <text x="566" y="128" font-size="11">210k</text>
+          <text x="644" y="143" font-size="11">183k</text>
+        </g>
+        <g text-anchor="middle" opacity=".65">
+          <text x="98"  y="268">2012</text>
+          <text x="176" y="268">2017</text>
+          <text x="254" y="268">2019</text>
+          <text x="332" y="268">2020</text>
+          <text x="410" y="268">2021</text>
+          <text x="488" y="268">2022</text>
+          <text x="566" y="268">2023</text>
+          <text x="644" y="268">2025</text>
+        </g>
+        <text x="371" y="292" text-anchor="middle" opacity=".55" font-size="11.5">2020–2021 : Covid + réduction de 50 % décidée en septembre 2021</text>
+      </g>
+    </svg>
+
+    <h3>Demandes déposées auprès des consulats français en Algérie — année 2025</h3>
+    <table>
+      <tr><th>Indicateur</th><th>Valeur</th></tr>
+      <tr><td>Demandes déposées (Alger, Oran, Annaba)</td><td class="num">248 684</td></tr>
+      <tr><td>Refus</td><td class="num">72 740</td></tr>
+      <tr><td>Taux de refus global — France / Algérie</td><td class="num">29,2 %</td></tr>
+      <tr><td>Consulat d'Alger</td><td class="num">24,6 %</td></tr>
+      <tr><td>Consulat d'Oran</td><td class="num">38,5 %</td></tr>
+      <tr><td>Tous consulats Schengen en Algérie (2024 → 2025)</td><td class="num">35 % → 31 %</td></tr>
+    </table>
+
+    <div class="encadre">
+      <p><strong>Comment lire ces chiffres.</strong> Près de sept demandes sur dix aboutissent : le visa n'est pas devenu inaccessible. Mais ces 70 % de réussite sont portés par les dossiers qui <em>cochent les cases</em> — salariés avec fiches de paie et affiliation CNAS, commerçants avec registre du commerce, fonctionnaires, retraités. Un dossier sans aucune preuve de statut ne se compare pas à cette moyenne : il se compare à la part des refus, où il tombe presque par construction.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 9 ============ -->
+<section id="sorties">
+  <div class="wrap">
+    <h2>S'il existe une issue, elle est là — et elle est étroite</h2>
+    <p class="lead">Aucune « autre procédure » n'existe pour le visa touristique. Et ni le refus de l'université, ni même l'obtention du doctorat ne se règlent comme on l'imagine.</p>
+
+    <h3>D'abord, une question à trancher : l'inscription existe-t-elle encore ?</h3>
+
+    <p>On dit souvent « l'université refuse de délivrer le certificat pour une démarche personnelle ». Avant d'insister, il faut savoir <strong>ce que le refus recouvre réellement</strong>, parce que le doctorat algérien est encadré par un texte précis — l'<strong>arrêté n° 028 du 9 janvier 2022</strong> du ministère de l'Enseignement supérieur :</p>
+
+    <div class="carte">
+      <h3>Ce que dit l'arrêté n° 028 du 9 janvier 2022</h3>
+      <ul class="propre">
+        <li><strong>Article 22</strong> — la formation doctorale dure <strong>trois années consécutives</strong>. Le chef d'établissement peut exceptionnellement accorder une <strong>dérogation d'une à deux années</strong>, sur justification écrite du directeur de thèse et après avis des instances scientifiques.</li>
+        <li><strong>Article 25</strong> — l'inscription du doctorant est <strong>renouvelée chaque année universitaire</strong>, après avis du directeur de thèse.</li>
+        <li><strong>Article 32</strong> — le doctorant qui, au terme des trois ans, n'a pas obtenu (ou pas demandé) d'inscription dérogatoire est <strong>systématiquement exclu</strong>.</li>
+      </ul>
+    </div>
+
+    <p>Deux situations en découlent, et elles n'appellent pas du tout la même démarche :</p>
+
+    <div class="cases">
+      <div class="case" style="border-color:var(--vert); background:var(--vert-pale)">
+        <div class="croix" style="background:var(--vert)">A</div>
+        <div class="titre">L'inscription est encore valide cette année</div>
+        <p class="exige">Le certificat de scolarité ne fait alors qu'<strong>attester un fait qui existe</strong>. Aucun texte ne subordonne sa délivrance au motif pour lequel on le demande : refuser « parce que c'est personnel » est une pratique de guichet, pas une règle.</p>
+        <p class="verdict" style="color:var(--vert)">→ Il y a bien quelque chose à débloquer. Faire remonter : directeur de thèse, directeur de laboratoire, chef d'établissement — ou produire le reçu / l'attestation de réinscription de l'année en cours, qui prouve le même fait.</p>
+      </div>
+      <div class="case">
+        <div class="croix">B</div>
+        <div class="titre">L'inscription n'est plus valide</div>
+        <p class="exige">Dérogation non obtenue ou non demandée au terme des trois ans : l'exclusion de l'article 32 s'applique. <strong>Il n'existe alors aucun document à délivrer</strong>, puisqu'il n'y a plus d'inscription à certifier.</p>
+        <p class="verdict">→ Ce n'est pas un blocage administratif : insister ne produira rien. La seule voie universitaire est une réinscription dérogatoire (art. 22) si elle est encore possible.</p>
+      </div>
+    </div>
+
+    <div class="encadre rouge">
+      <p><strong>Et l'attestation d'avancement de thèse ?</strong> C'est ce que suggère Gemini pour contourner le blocage. <span class="marque">Elle ne figure pas dans la liste de France-Visas</span>, qui exige nommément « certificat de scolarité ou carte d'étudiant ». Une lettre du directeur de thèse peut accompagner un dossier — elle ne peut pas remplacer la pièce exigée. C'est une atténuation, pas une solution.</p>
+    </div>
+
+    <h3>Soutenir la thèse : nécessaire, mais pas suffisant</h3>
+
+    <p>On pourrait croire qu'une fois docteur, tout se débloque. C'est faux, et il faut le dire nettement : <span class="marque">un diplôme n'est jamais un justificatif</span>. Il n'existe aucune catégorie « diplômé » dans la liste officielle.</p>
+
+    <p>La page Algérie de France-Visas publie une liste étendue des <strong>« justificatifs spécifiques pour les personnes exerçant une profession/activité spécifique »</strong>. Elle le confirme ligne par ligne :</p>
+
+    <figure>
+      <img src="img/france-visas-professions-specifiques.png" alt="Liste France-Visas des justificatifs spécifiques par profession : membre du gouvernement, personnel de délégation européenne, notaire, professions en ordre professionnel, juges, hauts fonctionnaires, universitaire, officier, journaliste — chacun devant fournir une attestation de fonction">
+      <figcaption>Page Algérie de France-Visas, capture du 20/09/2026 — <a href="https://france-visas.gouv.fr/fr/algerie">france-visas.gouv.fr/fr/algerie</a></figcaption>
+    </figure>
+
+    <p>Regardez la ligne qui s'appliquerait ici : <strong>« Universitaire (assistant, maître-assistant, maître de conférence, directeur, doyen de faculté, recteur) : attestation de fonction délivrée par l'établissement d'enseignement supérieur »</strong>. Pas « docteur ». Pas « titulaire d'un doctorat ». Une <em>fonction</em>, attestée par un tiers. Et c'est vrai de chaque ligne de cette liste, du notaire au journaliste.</p>
+
+    <div class="encadre rouge">
+      <p><strong>Conséquence contre-intuitive : soutenir sans débouché ne débloque rien — et referme même une porte.</strong> Une fois la thèse soutenue, il n'y a plus d'inscription : plus de certificat de scolarité possible, donc la case « Étudiants ou mineurs » disparaît définitivement. Le dossier retombe dans « Personnes sans emploi », qui réclame un certificat de mariage, un livret de famille ou un titre de propriété. <span class="marque">Le même mur qu'aujourd'hui, mais sans même la situation A.</span></p>
+    </div>
+
+    <h3>Ce qui débloque vraiment : un rattachement, pas un titre</h3>
+
+    <p>Le doctorat n'est pas la sortie ; il est ce qui <em>donne accès</em> à la sortie. La sortie, c'est d'être rattachée à quelque chose qui peut l'attester. Deux formes, et deux seulement :</p>
+
+    <ol class="sorties">
+      <li><strong>Un rattachement en Algérie.</strong> Un poste universitaire (assistant, maître-assistant, maître de conférences → attestation de fonction de l'établissement), un emploi salarié (attestation de travail + affiliation CNAS), une activité déclarée (registre du commerce + CASNOS), ou la fonction publique (arrêté de nomination + bulletin de salaire). La rubrique « Situation professionnelle » cesse alors d'être « non justifiée ». C'est le recrutement qui coche la case, pas le parchemin — mais sans le doctorat, ces postes ne sont pas ouverts.</li>
+      <li><strong>Un rattachement en France, sur une tout autre logique.</strong> L'accord franco-algérien du 27 décembre 1968 — le texte qui régit à lui seul le séjour des Algériens en France — prévoit à son <strong>article 7 f)</strong> : « <em>Les ressortissants algériens qui viennent en France pour mener des travaux de recherche ou dispenser un enseignement universitaire, reçoivent sous réserve d'une entrée régulière, un certificat de résidence valable un an portant la mention « scientifique »</em> ». Côté visa, c'est le <strong>visa long séjour « scientifique-chercheur »</strong>, délivré sur présentation d'une <strong>convention d'accueil CERFA</strong> émise par un établissement agréé — ce qui suppose un contrat de travail en France, un statut de chercheur invité, ou un financement doctoral ou post-doctoral au moins égal au seuil des contrats doctoraux publics (1 690 € net/mois en 2023).</li>
+    </ol>
+
+    <div class="encadre vert">
+      <p><strong>Pourquoi la seconde voie change la nature du problème.</strong> Elle s'apprécie sur <span class="marque">la convention d'accueil d'un laboratoire français</span>, pas sur la capacité à prouver qu'on rentrera. Le motif qui bloque le dossier touristique — « la volonté de quitter le territoire n'a pas pu être établie » — n'y occupe plus la même place. Mais elle n'est pas un droit attaché au diplôme : il faut être recruté, invité ou financé. C'est donc un objectif à préparer <em>avant</em> la soutenance, pas une conséquence automatique.</p>
+    </div>
+
+    <div class="encadre ambre">
+      <p><strong>La bonne question n'est donc pas « quand soutenir ? » mais « soutenir vers quoi ? ».</strong> Post-doc, poste d'assistant, convention d'accueil, contrat : c'est le débouché qui produit le justificatif. Une soutenance sans débouché laisse la situation administrative exactement où elle est — et supprime au passage le statut d'étudiant.</p>
+    </div>
+
+    <div class="encadre ambre">
+      <p><strong>Attention au raccourci inverse.</strong> Le guide d'accueil des doctorants et chercheurs internationaux de l'Université Paris-Saclay, dans sa fiche consacrée aux ressortissants algériens, est explicite : les visas touristique et stagiaire « <em>ne peuvent être prolongés ou modifiés vers un autre statut</em> ». Pour commencer une thèse ou une recherche en France, il faut « <em>retourner dans votre pays de résidence/d'origine pour refaire une nouvelle demande de visa adaptée</em> ». Entrer comme touriste n'ouvre donc aucune porte — cela ferme celle d'après.</p>
+    </div>
+
+    <div class="encadre ambre">
+      <p><strong>Trois fausses pistes, à écarter formellement.</strong></p>
+      <ul class="propre">
+        <li><strong>Les intermédiaires qui « garantissent » un visa</strong> : aucun réseau parallèle n'existe. Un document falsifié ou une réservation fictive entraîne un refus et un risque de signalement dans le système Schengen.</li>
+        <li><strong>Demander le visa à un autre pays Schengen</strong> pour entrer en France : c'est du « visa shopping ». La demande doit être déposée auprès du pays de destination principale, et les gardes-frontières peuvent refuser l'entrée.</li>
+        <li><strong>Les services premium du prestataire</strong> (biométrie à domicile, salon VIP, passage accéléré) : ils changent le confort du rendez-vous, pas un seul critère d'évaluation du consulat.</li>
+      </ul>
+    </div>
+
+    <div class="encadre vert">
+      <p><strong>Le conseil qui découle de tout ça</strong> n'est pas « n'y allez pas », c'est : <span class="marque">ne déposez pas un dossier qu'on sait incomplet</span> — un refus de plus reste cinq ans au fichier — établissez d'abord si l'inscription existe encore, puis visez le rattachement qui produira le justificatif — un poste, une activité déclarée, ou une convention d'accueil. C'est lui qui fait le dossier, pas le diplôme.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 10 ============ -->
+<section id="sources">
+  <div class="wrap">
+    <h2>Sources</h2>
+    <p class="lead">Tout ce qui précède est vérifiable. Chaque lien ouvre la source d'origine.</p>
+
+    <ul class="sources">
+      <li><a href="https://drive.google.com/drive/folders/1esPsHhqpGHkjh8FaM0uOe3jKOcYvaCZu">Conversation Gemini du 19/09/2026 — « Obtenir un visa touristique pour la France » (PDF archivé, accès restreint)</a>
+        <span class="quoi">Le document de départ, archivé en PDF le 20/09/2026 : questions posées et réponses de Gemini, dont la conclusion « refus quasi-certain ». Le lien de partage en ligne n'est volontairement pas reproduit.</span></li>
+      <li><a href="https://france-visas.gouv.fr/assistant-visa">France-Visas — assistant visa (site officiel de l'État français)</a>
+        <span class="quoi">Génère la liste des justificatifs par profil. Captures de cette page réalisées le 20/09/2026 pour le profil exact décrit en section 1.</span></li>
+      <li><a href="https://france-visas.gouv.fr/fr/algerie">France-Visas — page Algérie</a>
+        <span class="quoi">Consulats compétents, centres Capago, délai de rendez-vous d'environ un mois, frais de service de 29 €, et la mention « Le montant perçu est conservé par l'administration, même en cas de refus de visa ». C'est aussi cette page qui publie la liste des « justificatifs spécifiques pour les personnes exerçant une profession/activité spécifique » — dont la ligne « Universitaire », qui exige une attestation de fonction et non un diplôme.</span></li>
+      <li><a href="https://fr-dz.capago.eu/">Capago Algérie — prestataire officiel du dépôt</a>
+        <span class="quoi">Centres d'Alger, Oran, Annaba et Constantine ; prise de rendez-vous et services optionnels.</span></li>
+      <li><a href="https://france-visas.gouv.fr/jeune-au-pair">France-Visas — « Jeune au pair », conditions du séjour</a>
+        <span class="quoi">Fenêtre d'âge 18–30 ans ; obligation d'être titulaire d'une convention d'accueil de jeune au pair ; famille d'accueil sans lien de parenté ; visa long séjour valant titre de séjour, un an, prolongeable jusqu'à deux ans au total.</span></li>
+      <li><a href="https://france-visas.gouv.fr/documents/d/france-visas/cerfa_15973-01_convention_jeune_au_pair">Formulaire CERFA 15973*01 — convention entre le jeune au pair et la famille d'accueil</a>
+        <span class="quoi">Le texte officiel du ministère de l'Intérieur : 25 heures hebdomadaires maximum, une journée complète de repos, temps garanti pour les cours, et un <strong>argent de poche</strong> dont le minimum est fixé par arrêté — jamais un salaire, jamais un contrat de travail.</span></li>
+      <li><a href="https://www.legifrance.gouv.fr/codes/section_lc/LEGITEXT000006070158/LEGISCTA000042801260/">CESEDA — séjour de jeune au pair, articles R. 426-13 à R. 426-15 (Légifrance)</a>
+        <span class="quoi">Base réglementaire du statut (anciennement L. 313-9 et R. 313-12, références portées sur le formulaire CERFA).</span></li>
+      <li><a href="https://www.legifrance.gouv.fr/jorf/id/JORFTEXT000038196382">Arrêté du 4 mars 2019 relatif aux modalités de séjour des jeunes au pair (Légifrance)</a>
+        <span class="quoi">Fixe le montant minimal mensuel de l'argent de poche (320 €) — la contrepartie qui remplace le salaire et distingue l'au pair de l'emploi salarié.</span></li>
+      <li><a href="https://eur-lex.europa.eu/legal-content/FR/TXT/HTML/?uri=CELEX:32009R0810">Règlement (CE) n° 810/2009 — code communautaire des visas (EUR-Lex)</a>
+        <span class="quoi">Article 21 (examen, volonté de quitter le territoire), article 32 (motifs de refus), annexe VI (formulaire type de notification du refus).</span></li>
+      <li><a href="https://eur-lex.europa.eu/eli/reg/2019/1155/oj/fra">Règlement (UE) 2019/1155 — révision du code des visas</a>
+        <span class="quoi">Article 25 bis : application restrictive des règles selon la coopération du pays tiers en matière de réadmission. Applicable depuis le 2 février 2020.</span></li>
+      <li><a href="https://home-affairs.ec.europa.eu/news/schengen-visa-fee-increased-11-june-2024-2024-06-13_en">Commission européenne — hausse des frais de visa Schengen au 11 juin 2024</a>
+        <span class="quoi">Passage de 80 € à 90 € pour les adultes (révision triennale prévue par le code des visas).</span></li>
+      <li><a href="https://fr.wikipedia.org/wiki/Syst%C3%A8me_europ%C3%A9en_d'identification_des_visas">Système d'information sur les visas (VIS)</a>
+        <span class="quoi">Mise en service le 11 octobre 2011, première région déployée : Afrique du Nord, Algérie incluse.</span></li>
+      <li><a href="https://www.france24.com/en/africa/20210929-morocco-algeria-slam-france-s-unjustified-decision-to-slash-visas">France 24 — la France réduit de 50 % les visas pour l'Algérie et le Maroc (septembre 2021)</a>
+        <span class="quoi">Annonce officielle, motif invoqué (réadmission), réactions d'Alger et de Rabat.</span></li>
+      <li><a href="https://estin.dz/arrete-n-028-du-09-jan-2022-fixant-les-modalites-dacces-et-dorganisation-de-la-formation-de-troisieme-cycle-et-les-conditions-de-preparation-et-de-soutenance-de-la-these-de-doctorat/">Arrêté n° 028 du 9 janvier 2022 — formation doctorale en Algérie</a>
+        <span class="quoi">Article 22 (durée de trois ans, dérogation d'une à deux années accordée par le chef d'établissement), article 25 (renouvellement annuel de l'inscription après avis du directeur de thèse), article 32 (exclusion systématique à défaut de dérogation).</span></li>
+      <li><a href="https://www.info-droits-etrangers.org/wp-content/uploads/2017/12/accord-franco-algerien-27-dce.pdf">Accord franco-algérien du 27 décembre 1968, version consolidée</a>
+        <span class="quoi">Article 7 f) : certificat de résidence d'un an portant la mention « scientifique » pour les ressortissants algériens venant mener des travaux de recherche ou dispenser un enseignement universitaire. Ce texte régit à lui seul le séjour des Algériens en France.</span></li>
+      <li><a href="https://www.legifrance.gouv.fr/jorf/id/JORFTEXT000000599731">Décret n° 2002-1500 du 20 décembre 2002 — troisième avenant à l'accord de 1968 (Légifrance)</a>
+        <span class="quoi">Publication officielle de l'avenant qui a fixé la rédaction actuelle des catégories de certificat de résidence.</span></li>
+      <li><a href="https://www.universite-paris-saclay.fr/sites/default/files/2023-07/Guide-chercheurs-doctorants-fiche-visa-titre-sejour-Algeriens-2023.pdf">Université Paris-Saclay — guide visas et titres de séjour, fiche « ressortissants algériens » (2023, PDF)</a>
+        <span class="quoi">Conditions du visa long séjour scientifique-chercheur (convention d'accueil CERFA d'un établissement agréé ; contrat de travail, chercheur invité, ou financement ≥ 1 690 € net/mois), et mention explicite que les visas touristique et stagiaire ne peuvent être prolongés ni transformés en un autre statut.</span></li>
+      <li><a href="https://www.immigration.interieur.gouv.fr/Info-ressources/Etudes-et-statistiques/Les-chiffres-de-l-immigration-en-France/Visas">Ministère de l'Intérieur — statistiques des visas</a>
+        <span class="quoi">Série officielle des visas délivrés par nationalité.</span></li>
+      <li><a href="https://observalgerie.com/2026/05/30/immigration/france-espagne-refus-voici-les-chiffres-des-visas-schengen-en-algerie-en-2025">Chiffres des visas Schengen en Algérie en 2025</a>
+        <span class="quoi">248 684 demandes déposées auprès des consulats français, 72 740 refus, taux de 29,2 % ; Alger 24,6 %, Oran 38,5 %.</span></li>
+      <li><a href="https://www.tsa-algerie.com/immigration-en-france-moins-de-visas-et-de-titres-de-sejour-pour-les-algeriens/">TSA — visas et titres de séjour délivrés aux Algériens</a>
+        <span class="quoi">Série 2019–2025 et baisse de 18,3 % des visas délivrés en 2025.</span></li>
+    </ul>
+
+    <p class="small">Les captures d'écran France-Visas ont été réalisées le 20 septembre 2026 en renseignant dans l'assistant officiel le profil décrit en section 1 (nationalité algérienne, 29 ans, résidence Algérie, court séjour ≤ 90 jours, France métropolitaine, passeport ordinaire, tourisme / visite privée). Les listes de justificatifs affichées par France-Visas dépendent du pays de dépôt et peuvent évoluer : la page fait foi, pas cette capture.</p>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <p>Document d'explication factuelle · établi le 20 septembre 2026 · sources officielles liées ci-dessus.<br>
+    Il ne s'agit pas d'un conseil juridique : seule l'autorité consulaire décide, et elle conserve son pouvoir d'appréciation.</p>
+  </div>
+</footer>
+
+<script>
+(function(){
+  var liens = Array.prototype.slice.call(document.querySelectorAll('nav a'));
+  var cibles = liens.map(function(a){ return document.querySelector(a.getAttribute('href')); });
+  function majuscule(){
+    var y = window.scrollY + 90, actif = 0;
+    cibles.forEach(function(c,i){ if(c && c.offsetTop <= y) actif = i; });
+    liens.forEach(function(a,i){ a.classList.toggle('on', i === actif); });
+    var lien = liens[actif];
+    if (lien && lien.parentNode.scrollWidth > lien.parentNode.clientWidth){
+      var g = lien.offsetLeft - lien.parentNode.clientWidth/2 + lien.clientWidth/2;
+      lien.parentNode.scrollTo({left:g, behavior:'smooth'});
+    }
+  }
+  var attente = null;
+  window.addEventListener('scroll', function(){
+    if (attente) return;
+    attente = setTimeout(function(){ attente = null; majuscule(); }, 120);
+  }, {passive:true});
+  majuscule();
+})();
+</script>
+<script>
+(function(){
+  document.querySelectorAll('.porte-tete').forEach(function(b){
+    b.addEventListener('click', function(){
+      var porte = b.closest('.porte');
+      var ouvert = porte.classList.toggle('ouverte');
+      b.setAttribute('aria-expanded', ouvert ? 'true' : 'false');
+    });
+  });
+})();
+</script>
+<script>
+(function(){
+  var b=document.querySelector('.histo-carre');
+  if(!b) return;
+  var corps=document.getElementById('historique');
+  b.addEventListener('click', function(){
+    var ouvert=corps.classList.toggle('visible');
+    b.classList.toggle('ouvert', ouvert);
+    b.setAttribute('aria-expanded', ouvert?'true':'false');
+  });
+})();
+</script>
+</body>
+</html>
