@@ -128,8 +128,8 @@ figure.etroite img{max-width:400px; margin:0 auto}
 figcaption{font-size:13.5px; color:var(--gris); margin-top:9px}
 .zoom{display:inline-block; font-size:13.5px; font-weight:600; text-decoration:none; margin-top:4px}
 
-/* ---------- les trois portes (interactif) ---------- */
-.portes{display:grid; grid-template-columns:repeat(3,1fr); gap:16px; margin:26px 0 20px; align-items:start}
+/* ---------- les quatre portes (interactif) ---------- */
+.portes{display:grid; grid-template-columns:repeat(2,1fr); gap:16px; margin:26px 0 20px; align-items:start}
 @media(max-width:780px){.portes{grid-template-columns:1fr}}
 .porte{
   background:var(--carte); border:1px solid var(--bord); border-radius:16px;
@@ -167,6 +167,11 @@ figcaption{font-size:13.5px; color:var(--gris); margin-top:9px}
 @media (prefers-color-scheme: dark){:root:not([data-theme="light"]) .porte-verdict{color:#2a1618}}
 :root[data-theme="dark"] .porte-verdict{color:#2a1618}
 .porte-verdict.attente{background:var(--ambre)}
+.porte.vert .porte-num{background:var(--vert-pale); color:var(--vert); border-color:var(--vert)}
+.porte.vert .porte-verdict{background:var(--vert)}
+.porte.vert:hover, .porte.vert.ouverte{border-color:var(--vert)}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]) .porte.vert .porte-verdict{color:#132419}}
+:root[data-theme="dark"] .porte.vert .porte-verdict{color:#132419}
 .porte-panneau p{font-size:15px; margin:0 0 11px}
 .porte-lien{font-size:14.5px; font-weight:700; text-decoration:none}
 .portes-aide{text-align:center; font-size:14.5px; color:var(--gris); margin:0 0 4px}
@@ -270,7 +275,7 @@ svg{max-width:100%; height:auto}
 
 <nav>
   <div class="wrap">
-    <a href="#trois">Les trois voies</a>
+    <a href="#trois">Les quatre voies</a>
     <a href="#depart">Le point de départ</a>
     <a href="#quasi">Pourquoi « quasi »</a>
     <a href="#regle">La règle officielle</a>
@@ -289,10 +294,10 @@ svg{max-width:100%; height:auto}
 <!-- ============ 0 ============ -->
 <section id="trois">
   <div class="wrap">
-    <h2>Les trois voies, en une page</h2>
-    <p class="lead">Trois statuts possibles pour se retrouver, trois démarches réellement engagées, trois traverses — chacune d'une nature différente.</p>
+    <h2>Les quatre voies, en une page</h2>
+    <p class="lead">Trois statuts possibles pour venir en France, trois démarches réellement engagées, trois traverses — chacune d'une nature différente. Et une quatrième voie, dans l'autre sens : le mariage en Algérie.</p>
 
-    <p class="portes-aide">Cliquez sur une porte pour savoir pourquoi elle ne s'ouvre pas.</p>
+    <p class="portes-aide">Cliquez sur une porte pour savoir pourquoi elle ne s'ouvre pas — ou comment la quatrième s'ouvre.</p>
 
     <div class="portes">
 
@@ -331,7 +336,7 @@ svg{max-width:100%; height:auto}
       <div class="porte">
         <button class="porte-tete" type="button" aria-expanded="false" aria-controls="porte-3">
           <span class="porte-num">3</span>
-          <span class="porte-titre">Venir pour se marier</span>
+          <span class="porte-titre">Mariage en France</span>
           <span class="porte-quoi">Dossier déposé et instruit</span>
           <span class="porte-cta"><span class="chev">›</span> Où ça en est&nbsp;?</span>
         </button>
@@ -341,6 +346,21 @@ svg{max-width:100%; height:auto}
           <p>Sur les seize motifs possibles du formulaire européen, <strong>une seule case est cochée</strong> : « les informations communiquées ne sont pas fiables ». On ne reproche donc pas un papier manquant — <strong>on met en doute la sincérité du projet</strong>.</p>
           <p>Un recours a été déposé dans le délai de trente jours, complété en juillet. Il est <strong>toujours sans réponse</strong>.</p>
           <a class="porte-lien" href="#mariage">→ La décision et la chronologie du recours</a>
+        </div>
+      </div>
+
+      <div class="porte vert">
+        <button class="porte-tete" type="button" aria-expanded="false" aria-controls="porte-4">
+          <span class="porte-num">4</span>
+          <span class="porte-titre">Mariage en Algérie</span>
+          <span class="porte-quoi">C'est le futur époux qui se déplace</span>
+          <span class="porte-cta"><span class="chev">›</span> Où ça en est&nbsp;?</span>
+        </button>
+        <div class="porte-panneau" id="porte-4">
+          <span class="porte-verdict">Seule voie envisageable</span>
+          <p>Puisque la venue en France est bloquée, le mariage se prépare <strong>en Algérie</strong>. C'est le futur époux qui se déplace : un <strong>visa algérien lui a été accordé le 18 août 2026</strong>, pour trente jours.</p>
+          <p>Côté algérien, les démarches de mariage mixte ont été engagées auprès de la wilaya d'Oran. Côté français, le dossier de certificat de capacité à mariage a été déposé au consulat de France à Oran, puis <strong>renvoyé complet le 28 septembre 2026</strong>.</p>
+          <p>Un séjour du futur époux en Algérie est prévu en octobre 2026.</p>
         </div>
       </div>
 
@@ -367,7 +387,7 @@ svg{max-width:100%; height:auto}
         <div class="evt"><span class="d">28/01/2026</span><span class="t">Réorientation : le dossier doit être déposé à Oran, pas à Alger. Annulation du rendez-vous d'Alger, nouvelle demande de créneau à Oran.</span></div>
         <div class="evt"><span class="d">01/02/2026</span><span class="t">Rendez-vous attribué à Oran pour le 9 février.</span></div>
         <div class="evt"><span class="d">04 – 05/02</span><span class="t">Billet d'avion provisoire et assurance voyage de douze mois souscrits.</span></div>
-        <div class="evt cle"><span class="d">09/02/2026</span><span class="t"><strong>Au guichet, on exige une autorisation de travail.</strong> Le dossier est repris plutôt que laissé sans garantie, avec le passeport.</span></div>
+        <div class="evt cle"><span class="d">09/02/2026</span><span class="t"><strong>Au guichet, on exige une autorisation de travail.</strong> Le dossier est retiré.</span></div>
         <div class="evt"><span class="d">10/02/2026</span><span class="t">Tentative d'obtenir cette autorisation de travail en ligne sur la plateforme de l'administration française.</span></div>
         <div class="evt"><span class="d">10 – 20/02</span><span class="t">En parallèle, démarches d'inscription à des cours de français en Bretagne. Réponse négative.</span></div>
         <div class="evt"><span class="d">14 – 16/02</span><span class="t">Demande de réouverture du dossier. Le prestataire répond qu'il faut reprendre un nouveau rendez-vous.</span></div>
@@ -388,7 +408,9 @@ svg{max-width:100%; height:auto}
         <div class="evt"><span class="d">20 – 27/03</span><span class="t">Dossier de publication des bans transmis.</span></div>
         <div class="evt"><span class="d">28/03/2026</span><span class="t">Préparation du dossier de visa et prise de rendez-vous.</span></div>
         <div class="evt"><span class="d">30/03/2026</span><span class="t">Rendez-vous en visioconférence avec le notaire pour un contrat de mariage en séparation de biens. La présence physique est exigée pour la signature.</span></div>
-        <div class="evt"><span class="d">Avril 2026</span><span class="t">Audition en mairie côté français. Envoi des attestations d'accueil par courrier.</span></div>
+        <div class="evt"><span class="d">09/04/2026</span><span class="t">Envoi des attestations d'accueil par courrier.</span></div>
+        <div class="evt"><span class="d">Avril 2026</span><span class="t">Audition en mairie côté français.</span></div>
+        <div class="evt"><span class="d">Avril 2026</span><span class="t">Réorganisation des témoins du mariage, de part et d'autre.</span></div>
         <div class="evt"><span class="d">25/04/2026</span><span class="t">Réception en Algérie des attestations d'accueil, timbres fiscaux et acte de naissance.</span></div>
         <div class="evt"><span class="d">26 – 27/04</span><span class="t">Rendez-vous attribué puis payé et confirmé.</span></div>
         <div class="evt"><span class="d">07/05/2026</span><span class="t">Créneau attribué pour l'audition, prévue en mairie le 13 juin.</span></div>
@@ -405,7 +427,7 @@ svg{max-width:100%; height:auto}
 
       <div class="phase">
         <div class="phase-tete">
-          <div class="periode">Juin – septembre 2026</div>
+          <div class="periode">Juin – novembre 2026</div>
           <h3>Phase 3 · Le recours contre le refus</h3>
         </div>
         <div class="phase-corps">
@@ -415,15 +437,18 @@ svg{max-width:100%; height:auto}
         <div class="evt"><span class="d">20/07/2026</span><span class="t">Nantes réclame le renvoi d'un exemplaire signé du recours avant le 1er août.</span></div>
         <div class="evt"><span class="d">22/07/2026</span><span class="t">Exemplaire signé réexpédié par courrier express depuis l'Algérie.</span></div>
         <div class="evt cle"><span class="d">30/07/2026</span><span class="t">Le courrier arrive à Nantes — dans les délais.</span></div>
+        <div class="evt"><span class="d">26/08/2026</span><span class="t">Deux mois après réception du recours, toujours aucune réponse. Le délai est compté à partir du recours complété, fin juillet.</span></div>
         <div class="evt"><span class="d">14/09/2026</span><span class="t">Recours toujours en cours d'instruction.</span></div>
-        <div class="evt cle"><span class="d">30/09/2026</span><span class="t"><strong>Échéance : sans réponse à cette date, le recours est réputé rejeté.</strong></span></div>
-          <div class="bilan attente">Résultat : en attente. C'est la seule porte qui n'est pas encore définitivement fermée.</div>
+        <div class="evt"><span class="d">28/09/2026</span><span class="t">Toujours aucune réponse.</span></div>
+        <div class="evt cle"><span class="d">30/09/2026</span><span class="t"><strong>Sans réponse à cette date, le recours est réputé rejeté</strong> — rejet implicite, pour les mêmes motifs que le refus.</span></div>
+        <div class="evt cle"><span class="d">26/10 – 30/11/2026</span><span class="t"><strong>Dernière voie : le tribunal administratif de Nantes</strong>, à saisir dans les deux mois qui suivent le rejet — au plus tard le 26/10 par prudence. Au-delà, le refus devient définitif.</span></div>
+          <div class="bilan attente">Résultat : en attente jusqu'au 30/09. Ensuite, seule reste la voie du tribunal administratif.</div>
         </div>
       </div>
 
       <div class="phase">
         <div class="phase-tete">
-          <div class="periode">Juillet – septembre 2026</div>
+          <div class="periode">Juillet – octobre 2026</div>
           <h3>En parallèle · Le mariage lui-même, et les retrouvailles</h3>
         </div>
         <div class="phase-corps">
@@ -432,15 +457,17 @@ svg{max-width:100%; height:auto}
         <div class="evt"><span class="d">Juillet 2026</span><span class="t">Démarches auprès de la wilaya d'Oran sur le dossier de mariage mixte.</span></div>
         <div class="evt"><span class="d">23/07/2026</span><span class="t">Nouveau rendez-vous notarial en visioconférence pour le régime de séparation de biens.</span></div>
         <div class="evt"><span class="d">27/07/2026</span><span class="t">Constitution d'une attestation d'hébergement pour le séjour en Algérie ; traduction et envoi du dossier de certificat de capacité à mariage.</span></div>
-        <div class="evt cle"><span class="d">18/08/2026</span><span class="t"><strong>Avis favorable</strong> obtenu côté français, assorti d'un délai de trente jours.</span></div>
+        <div class="evt cle"><span class="d">18/08/2026</span><span class="t"><strong>Visa algérien accordé au futur époux</strong>, pour trente jours : c'est lui qui pourra se déplacer.</span></div>
         <div class="evt"><span class="d">23/08/2026</span><span class="t">Le dossier de certificat de capacité à mariage parvient au consulat de France à Oran. Aucun accusé de réception par courriel.</span></div>
-        <div class="evt"><span class="d">18/09/2026</span><span class="t">Retour du consulat, transmis par le ministère de l'Europe et des Affaires étrangères.</span></div>
-          <div class="bilan ok">Le mariage avance. C'est le déplacement, et lui seul, qui reste bloqué.</div>
+        <div class="evt"><span class="d">18/09/2026</span><span class="t">Réponse au dossier de certificat de capacité à mariage : courrier du ministère de l'Europe et des Affaires étrangères daté du 15/09, reçu le 18/09.</span></div>
+        <div class="evt cle"><span class="d">28/09/2026</span><span class="t"><strong>Dossier de certificat de capacité à mariage renvoyé complet</strong>, avec la convention de mariage à jour ; toutes les pièces ont moins de trois mois.</span></div>
+        <div class="evt"><span class="d">Octobre 2026</span><span class="t">Séjour prévu du futur époux en Algérie.</span></div>
+          <div class="bilan ok">Le mariage avance, et les retrouvailles sont possibles en Algérie. Ce qui reste bloqué, c'est la venue de la future épouse en France.</div>
         </div>
       </div>
 
       <div class="encadre rouge">
-        <p><strong>Neuf mois, trois procédures, deux pays, et pas une seule fois la possibilité de se retrouver en France.</strong> Les seules retrouvailles ont eu lieu dans un pays tiers, parce que c'était le seul endroit où les deux pouvaient entrer.</p>
+        <p><strong>Neuf mois, trois procédures, deux pays, et pas une seule fois la possibilité de se retrouver en France.</strong> Les retrouvailles ont eu lieu dans un pays tiers, puis en Algérie — jamais en France.</p>
       </div>
 
     </div>
@@ -617,7 +644,7 @@ svg{max-width:100%; height:auto}
     <p>Un dossier complet a été constitué : <strong>convention CERFA 15973*01</strong> « conclue entre le jeune au pair et la famille d'accueil », signée le 30 décembre 2025, accompagnée du CV, de la lettre d'invitation, d'une assurance, d'un certificat de niveau d'anglais et des diplômes traduits. Rendez-vous pris et frais payés auprès du centre agréé.</p>
 
     <div class="encadre ambre">
-      <p><strong>Il n'existe aucun refus écrit pour cette voie, et il ne faut pas en inventer un.</strong> Le dossier n'a jamais atteint le consulat : au guichet, le 9 février 2026, une <em>autorisation de travail</em> a été exigée. Le dossier a été repris plutôt que laissé sans garantie, avec le passeport. Le dossier a été repris — laisser un passeport sans garantie n'était pas envisageable. Il n'y a donc ni décision, ni motif coché, ni recours possible : la demande s'est arrêtée avant d'exister.</p>
+      <p><strong>Il n'existe aucun refus écrit pour cette voie, et il ne faut pas en inventer un.</strong> Le dossier n'a jamais atteint le consulat : au guichet, le 9 février 2026, une <em>autorisation de travail</em> a été exigée, et la demande a été retirée. Il n'y a donc ni décision, ni motif coché, ni recours possible : la demande s'est arrêtée avant d'exister.</p>
     </div>
 
     <h3>Pourquoi l'exigence est impossible à satisfaire</h3>
